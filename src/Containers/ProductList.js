@@ -1,26 +1,35 @@
 import React, { useEffect, useState } from "react";
-
+import Product from "../Components/Product";
+import Pagination from "../Components/Pagination";
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products?limit=3")
+    fetch("https://fakestoreapi.com/products/")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
-        console.log(data);
+        console.log(data); //TODO: Remove console logs.
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err)); //TODO Display errors to user
   }, []);
 
-  const items = products.map((item) => (
-    <div key={item.id}>
-      <h2>{item.title}</h2>
-      <div>{item.price}</div>
-      <img src={item.image} height="50px" />
+  return (
+    <div>
+      {products.length > 0 ? (
+        <>
+          <Pagination
+            data={products}
+            RenderComponent={Product}
+            title="Posts"
+            pageLimit={5}
+            dataLimit={4}
+          />
+        </>
+      ) : (
+        <h1>No Products to display</h1>
+      )}
     </div>
-  ));
-
-  return <div>{items}</div>;
+  );
 };
 
 export default ProductList;
