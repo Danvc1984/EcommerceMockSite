@@ -1,0 +1,7 @@
+.Details {
+  display: none;
+}
+.View-Details:hover + .Details,
+.View-Details:active + .Details {
+  display: block;
+}

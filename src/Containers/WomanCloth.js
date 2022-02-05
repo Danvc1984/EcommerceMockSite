@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Product from "../Components/Product";
 import Pagination from "./Pagination";
-const ProductList = () => {
+const WomenCloth = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/")
+    fetch("https://fakestoreapi.com/products/category/women's clothing")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
       })
-      .catch((err) => console.log(err)); //TODO Display errors to user
+      .catch((err) => console.log(err));
   }, []);
 
   return (
@@ -19,16 +19,16 @@ const ProductList = () => {
           <Pagination
             data={products}
             RenderComponent={Product}
-            title="All Products"
-            pageLimit={5}
+            title="Women's Clothing"
+            pageLimit={2}
             dataLimit={4}
           />
         </>
       ) : (
-        <h1>No Products to display</h1>
+        <h1>No Women's clothing to display</h1>
       )}
     </div>
   );
 };
 
-export default ProductList;
+export default WomenCloth;
