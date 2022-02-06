@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Logo from "../assets/HeartGrenade.svg";
 import "../scss/components/navbar.scss";
 
 const Navbar = () => {
@@ -7,8 +8,13 @@ const Navbar = () => {
     <nav className="nav" id="navbar">
       <div className="content">
         <div className="logo">
-          {/* TODO: Add Logo (svg) */}
-          <div>Light Grenades Merch site</div>
+          <NavLink to={"/"} exact>
+            <Logo className="logo-icon" />
+          </NavLink>
+          <div>
+            <h1>Light Grenades</h1>
+            <h3>Fan Merchandise</h3>
+          </div>
         </div>
         <ul>
           <li className="item">
