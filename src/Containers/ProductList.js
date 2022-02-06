@@ -3,6 +3,7 @@ import Product from "../Components/Product";
 import Pagination from "./Pagination";
 const ProductList = () => {
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
     fetch("https://fakestoreapi.com/products/")
       .then((res) => res.json())

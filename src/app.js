@@ -23,8 +23,6 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <h1>Light Grenades!</h1>
-      <h3>All your Incubus merch right in one place</h3>
       {currentPage}
     </div>
   );

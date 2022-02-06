@@ -5,13 +5,15 @@ const Product = (props) => {
   return (
     <div className="Product">
       <h2>{title}</h2>
-      <div>{price}</div>
-      <img src={image} height="50px" />
+      <div className="Price">${price}</div>
+      <div>
+        <img src={image} />
+      </div>
       <div className="View-Details">
         View Details
         <div className="Details">
-          <span>{category}</span>
-          <span>{description}</span>
+          <span className="Category">{category}</span>
+          <span className="Description">{description}</span>
         </div>
       </div>
     </div>

@@ -35,7 +35,7 @@ const Pagination = ({ data, RenderComponent, title, pageLimit, dataLimit }) => {
 
   return (
     <div>
-      <h1>{title}</h1>
+      <h1 className="dataTitle">{title}</h1>
 
       <div className="dataContainer">
         {getPaginatedData().map((d, idx) => (

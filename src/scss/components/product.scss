@@ -1,7 +1,49 @@
+@import "../variables";
+.Product {
+  margin: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  -webkit-box-shadow: 1px 3px 8px -7px #000;
+  box-shadow: 1px 3px 8px -7px #000;
+  img {
+    height: 180px;
+    width: 100%;
+  }
+  h2 {
+    padding: 0 2rem;
+    text-align: center;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+.Price {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.1rem;
+  padding: 0.4rem;
+}
 .Details {
   display: none;
+  flex-direction: column;
+}
+
+.View-Details {
+  padding: 1rem;
+  background-color: rgba(desaturate($main, 10%), 0.88);
+  border-radius: 10px;
+  color: $background;
+  margin: 1.2rem 0;
 }
 .View-Details:hover .Details,
 .View-Details:active .Details {
-  display: block;
+  display: flex;
+}
+.Category {
+  font-style: italic;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0.6rem 0.4rem;
 }

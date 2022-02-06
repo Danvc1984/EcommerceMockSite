@@ -1,6 +1,6 @@
 @import "../variables";
 .pagination {
-  margin-top: 2rem;
+  margin: 2rem 0.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,7 +24,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
+.paginationItem.active {
+  border: 1px solid $darkgrey;
+  color: $grey;
+  pointer-events: none;
+}
 .next {
   margin: 0 10px;
   cursor: pointer;
@@ -44,12 +48,6 @@
   border-right: 2.5rem solid $main;
 }
 
-.paginationItem.active {
-  border: 1px solid $darkgrey;
-  color: $grey;
-  pointer-events: none;
-}
-
 .prev.disabled {
   pointer-events: none;
   margin: 0 10px;
@@ -67,4 +65,27 @@
   border-top: 1.2rem solid transparent;
   border-bottom: 1.2rem solid transparent;
   border-left: 2.5rem solid $grey;
+}
+.dataTitle {
+  display: flex;
+  justify-content: center;
+}
+.dataContainer {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+@media ((max-width: 1220px)) {
+  .dataContainer {
+    width: 90%;
+  }
+}
+
+@media ((max-width: 720px)) {
+  .dataContainer {
+    width: 100%;
+  }
 }
